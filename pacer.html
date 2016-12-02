@@ -1,0 +1,121 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<form action="{{ url_for('pacer') }}" method="post" id="dropdowns">
+    <p>Select Court Type</p>
+    <select id="court_type" name ="court_type" style="margin-bottom:10px;"required>
+        <option class="placeholder" value="" selected disabled>Court Type</option>
+        <option value="all">All Courts</option></option>
+        <option value="ap">Appellate</option>
+        <option value="bk">Bankruptcy</option>
+        <option value="cv">Civil</option>
+        <option value="cr">Criminal</option>
+        <option value="mdl">Multi-District Litigation</option>
+    </select><br>
+    <p>Select Court Region</p>
+    <select id="court_region" name="court_region" style="margin-bottom:10px;" required>
+        <option class="placeholder" value="" selected>Court Region</option>
+        <option value="00">All Circuits</option>
+        <option value="01">First Circuit</option>
+        <option value="02">Second Circuit</option>
+        <option value="03">Third Circuit</option>
+        <option value="04">Fourth Circuit</option>
+        <option value="05">Fifth Circuit</option>
+        <option value="06">Sixth Circuit</option>
+        <option value="07">Seventh Circuit</option>
+        <option value="08">Eighth Circuit</option>
+        <option value="09">Ninth Circuit</option>
+        <option value="10">Tenth Circuit</option>
+        <option value="11">Eleventh Circuit</option>
+        <option value="COF">US Federal Claims Court</option>
+        <option value="CIT">US Court of International Trade</option>
+        <option value="AL">AL</option>
+        <option value="AK">AK</option>
+        <option value="AZ">AZ</option>
+        <option value="AR">AR</option>
+        <option value="CA">CA</option>
+        <option value="CO">CO</option>
+        <option value="CT">CT</option>
+        <option value="DE">DE</option>
+        <option value="FL">FL</option>
+        <option value="GA">GA</option>
+        <option value="HI">HI</option>
+        <option value="ID">ID</option>
+        <option value="IL">IL</option>
+        <option value="IN">IN</option>
+        <option value="IA">IA</option>
+        <option value="KS">KS</option>
+        <option value="KY">KY</option>
+        <option value="LA">LA</option>
+        <option value="ME">ME</option>
+        <option value="MD">MD</option>
+        <option value="MA">MA</option>
+        <option value="MI">MI</option>
+        <option value="MN">MN</option>
+        <option value="MS">MS</option>
+        <option value="MO">MO</option>
+        <option value="MT">MT</option>
+        <option value="NE">NE</option>
+        <option value="NV">NV</option>
+        <option value="NH">NH</option>
+        <option value="NJ">NJ</option>
+        <option value="NM">NM</option>
+        <option value="NY">NY</option>
+        <option value="NC">NC</option>    
+        <option value="ND">ND</option>
+        <option value="OH">OH</option>
+        <option value="OK">OK</option>
+        <option value="OR">OR</option>
+        <option value="PA">PA</option>
+        <option value="RI">RI</option>
+        <option value="SC">SC</option>
+        <option value="SD">SD</option>
+        <option value="TN">TN</option>
+        <option value="TX">TX</option>
+        <option value="UT">UT</option>
+        <option value="VT">VT</option> 
+        <option value="VA">VA</option>
+        <option value="WA">WA</option>
+        <option value="WV">WV</option>
+        <option value="WI">WI</option>
+        <option value="WY">WY</option>
+    </select><br>
+    <p>Filed Date Range (optional)</p>
+    <div class="form-group">
+        <input class="form-control" id="filed_start_date" name="filed_start_date" placeholder="Start Date" type="text" val=""/> to 
+        <input class="form-control" id="filed_end_date" name="filed_end_date" placeholder="End Date" type="text" val=""/>
+    </div> 
+    <p>Closed Date Range (optional)</p>
+     <div class="form-group">
+        <input class="form-control" id="closed_start_date" name="closed_start_date" placeholder="Start Date" type="text" val=""/> to
+        <input class="form-control" id="closed_end_date"name="closed_end_date" placeholder="End Date" type="text" val=""/>
+    </div>  
+                
+    <p>Case Number (optional)</p>
+     <div class="form-group">
+        <input class="form-control" id="case_num" name="case_num" placeholder="Case Number" type="text" val=""/>
+    </div>  
+                
+    <p>Party Name</p>
+    <div class="form-group">
+        <input class="form-control" id="party_name" name="party_name" placeholder="Last, First" type="text"/>
+    </div> 
+    
+    <p>SSN/TIN (Bankruptcy only, optional)</p>         
+    <div class="form-group">
+        <input style="width:300px;" class="form-control" id="ssn" name="ssn" placeholder="######### or ###-##-#### or ##-#######" type="text" val=""/>
+    </div> 
+    <p>Four Digit SSN (Bankruptcy only, Party name required, optional)</p>
+    <div class="form-group">
+        <input class="form-control" id="ssn4" name="ssn4" placeholder="####" type="text" val=""/>
+    </div> 
+    <br>
+    <div class="form-group">
+        <button class="submit" id="submit_button" type="button">Submit </button>
+    </div>
+</form>
+
+<script src="{{ url_for('static', filename='pacer_scripts.js') }}"></script>
+
+{% endblock %}

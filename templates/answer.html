@@ -1,0 +1,39 @@
+<div id="{{ item.title }}" style="display: {{ item.style }}" >
+    <div class="col s12 ">
+        <div class="card #e1f5fe light-blue lighten-5">
+            <div class="card-content blue-text text-darken-2">
+                <span id="yesno" class="card-title blue-text text-darken-2">{{ item.question }}</span>
+
+
+
+                    {% if item.title == "q34" %}
+                    <div class="card-panel white darken-3">
+                    <h3 id="{{ 'a-' }}{{ item.title }}" class="card-title" name="main">  {{ item.question }}  </h3>
+                    <h3 id="{{ 'b-' }}{{ item.title }}" class="card-title" name="main">  {{ item.question }}  </h3>
+                    <h3 id="{{ 'c-' }}{{ item.title }}" class="card-title" name="main">  {{ item.question }}  </h3>
+                    <h3 id="{{ 'd-' }}{{ item.title }}" class="card-title" name="main">  {{ item.question }}  </h3>
+                    <h3 id="{{ 'e-' }}{{ item.title }}" class="card-title" name="main">  {{ item.question }}  </h3>
+                    <h3 id="{{ 'f-' }}{{ item.title }}" class="card-title" name="main">  {{ item.question }}  </h3>
+                    {% endif %}
+
+                    </div>
+
+                    <div class="card-panel white darken-3">
+
+                    <h5 id="math"> But You May Be Eligible for Other Services.  Would you like to Check? </h5>
+                    </div>
+                        {% for n in item.valuelist|sort(attribute="title", reverse=False) %}
+                     <button href=""
+                             onclick="{{ item.function }}('{{ item.title }}', '{{ item.valuelist[n] }}');"
+                             id="{{ item.title }}"
+                             value = "{{ item.valuelist[n] }}"
+                             name = "{{ item.title }}"
+                             class="btn-large waves-effect waves-light black indigo lighten ">{{ n }}</button>
+
+                {% endfor %}
+
+          </div>
+        </div>
+    </div>
+</div>
+

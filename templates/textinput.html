@@ -1,0 +1,17 @@
+<div id="{{ item.title }}" style="display: {{ item.style }}" >
+
+    <div class="col s12 ">
+
+        {% include "card_start.html" %}
+
+                <h3 class="card-title"  id="u1-{{ item.title  }}" name="main">  {{ item.question|safe }}  </h3>
+                <h3 class="card-title" id="u2-{{ item.title  }}" name="alt" style="display: none"> {{ item.alternateq }} </h3>
+                    {% include "input.html" %}<br>
+                    {% include "button_list.html" %}
+                <h3><i class="activator small material-icons">info_outline</i></h3>
+            {% include "help.html" %}
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="row center" id="card_start">
+    {% for n in item.valuelist %}
+        <button href=""
+             onclick="{{ item.function }}('{{ item.title }}', '{{ item.valuelist[n] }}');"
+             id="{{ 'b-' }}{{ item.title }}"
+             value = "{{ item.valuelist[n] }}"
+             name = "{{ item.title }}"
+             class="btn-large waves-effect waves-torchred white-text">{{ n }}
+        </button>
+    {% endfor %}
+</div>

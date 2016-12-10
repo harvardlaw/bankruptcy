@@ -1,0 +1,23 @@
+
+{% if item.input == "button"%}
+
+    {% include "button.html" %}
+
+
+{% elif item.input == "text"%}
+
+    {% include "textinput.html" %}
+
+
+{% elif item.input == "answer"%}
+
+    {% include "answer.html" %}
+
+{% elif item.input == "dropdown"%}
+
+    {% include "dropdown.html" %}
+
+<br>
+
+{% endif %}
+
